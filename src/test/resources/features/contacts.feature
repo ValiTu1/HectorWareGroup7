@@ -28,13 +28,13 @@ Feature: contacts functionality
 
     Scenario: Users can User can edit any selected contact
       When user select a contact "Cydeo5"
-      And user is editing a property "Post office"
-      Then new property "Post office" should be displayed
+      And user is editing a property "Post office" "012345"
+      Then new property "Post office" value "012345" should be displayed
 
       @wip
-      Scenario: Users can delete any selected contact
+      Scenario: Users can delete any contact
         When user select a contact "Cydeo5"
         And user clicks on the contact dropdown menu
         And user clicks on Delete button
-        Then Contact "Cydeo5" should be deleted
+        Then Contact "Cydeo5" is deleted
 

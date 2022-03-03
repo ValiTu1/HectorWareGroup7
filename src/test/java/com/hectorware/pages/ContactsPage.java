@@ -9,6 +9,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ContactsPage extends BasePage{
 
     WebDriverWait wait = new WebDriverWait(Driver.get(), 5);
@@ -76,6 +79,9 @@ public class ContactsPage extends BasePage{
     @FindBy(xpath = "//div[contains(@class,'popover vue-popover-theme open')]//span[contains(.,'Delete')]")
     public WebElement deleteButton;
 
+    @FindBy(css = ".vue-recycle-scroller__item-wrapper> .vue-recycle-scroller__item-view")
+    public List<WebElement> allContacts;
+
 
 
     public boolean isGroupCreated(String groupName){
@@ -141,5 +147,28 @@ public class ContactsPage extends BasePage{
         String propertyPath = "//div[contains(.,'"+propertyName+"')]/../input[@class='property__value']";
         return Driver.get().findElement(By.xpath(propertyPath)).getAttribute("value").equals(propertyValue);
     }
+
+    public List<String> getContactsText(){
+        List<String> contacts = new ArrayList<>();
+        for (WebElement contact : allContacts) {
+            contacts.add(contact.getText());
+        }
+        return contacts;
+    }
+
+
+    public boolean isExistingContact(String contactName){
+
+        boolean flag =false;
+        List<String> contacts = new ArrayList<>(getContactsText());
+
+        for (String contact : contacts) {
+            if(contact.contains(contactName)){
+                flag = true;
+            }
+        }
+        return flag;
+    }
+
 
 }
