@@ -93,14 +93,14 @@ public class ContactsStepDefs {
         contactsPage.selectContact(contactName);
     }
 
-    @And("user is editing a property {string}")
-    public void userIsEditingAProperty(String propertyName) {
-        contactsPage.editContactDetails(propertyName, "567543");
+    @And("user is editing a property {string} {string}")
+    public void userIsEditingAProperty(String propertyName, String propertyValue) {
+        contactsPage.editContactDetails(propertyName, propertyValue);
     }
 
-    @Then("new property {string} should be displayed")
-    public void newPropertyShouldBeDisplayed(String propertyName) {
-        Assert.assertTrue(contactsPage.isPropertyValueDisplayed(propertyName, "567543"));
+    @Then("new property {string} value {string} should be displayed")
+    public void newPropertyShouldBeDisplayed(String propertyName, String propertyValue) {
+        Assert.assertTrue(contactsPage.isPropertyValueDisplayed(propertyName, propertyValue));
     }
 
     @And("user clicks on the contact dropdown menu")
@@ -117,7 +117,12 @@ public class ContactsStepDefs {
         contactsPage.deleteButton.click();
     }
 
-    @Then("Contact {string} should be deleted")
+    @Then("Contact {string} is deleted")
     public void contactShouldBeDeleted(String contactName) {
+        Utils.waitFor(4);
+        Assert.assertFalse(contactsPage.isExistingContact(contactName));
     }
+
+
+
 }

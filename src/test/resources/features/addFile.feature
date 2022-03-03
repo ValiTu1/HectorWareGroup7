@@ -1,5 +1,4 @@
 
-@wip
 Feature: Add File functionality
   Background:
     Given user is on the login page
