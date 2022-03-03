@@ -2,6 +2,7 @@ package com.hectorware.step_definitions;
 
 import com.hectorware.pages.AddFilePage;
 import com.hectorware.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -42,19 +43,26 @@ public class AddFileStepDefs {
     public void userClicksOn(String option)  {
         addFilePage.addFileOptions(option);
     }
-
-    @Then("user should able to download a file")
-    public void userShouldAbleToDownloadAFile() throws AWTException {
+    @And("user selects a file from directory")
+    public void userSelectsAFileFromDirectory() throws AWTException {
         addFilePage.uploadFile();
+    }
+
+    @And("user should able to created a {string}")
+    public void userShouldAbleToCreatedA(String expectedFileName) {
+        expectedFileName="EU7Project";
+        Assert.assertTrue(expectedFileName.contains(addFilePage.getFileText.getText()));
+
     }
     @Then("user should give folder name")
     public void userShouldGiveFolderName() {
         addFilePage.newFolderInput.sendKeys("EU7Project");
     }
+
     @Then("user should not create new folder same name with existing one and should get error message name {string}")
     public void userShouldNotCreateNewFolderSameNameWithExistingOneAndShouldGetErrorMessageName(String expectedErrorMessage) {
-        Assert.assertTrue(addFilePage.folderErrorMessage.getText().contains(expectedErrorMessage));
-        System.out.println(addFilePage.newTexDocInputBox.getText());
+        Assert.assertTrue(addFilePage.errorMessage.getText().contains(expectedErrorMessage));
+
     }
 
     @Then("user should give new folder name and click on arrow sign")
@@ -75,23 +83,8 @@ public class AddFileStepDefs {
 
     @Then("user should not create new text document same name with existing one and should get error message name {string}")
     public void userShouldNotCreateNewTextDocumentSameNameWithExistingOneAndShoulGetErrorMessageName(String expectedErrorMessage) {
-        Assert.assertTrue(addFilePage.textErrorMessage.getText().contains(expectedErrorMessage));
-        System.out.println(addFilePage.textErrorMessage.getText());
+        Assert.assertTrue(addFilePage.errorMessage.getText().contains(expectedErrorMessage));
+
     }
 
-
-
-
-
-
-
-
-   /* @Then("user should not able to download exe file and should get {string}")
-    public void userShouldNotAbleToDownloadExeFileAndShouldGet(String expectedErrorMessage) throws AWTException, InterruptedException {
-        addFilePage.uploadExeFile();
-
-        expectedErrorMessage="expectedErrorMessage";
-        Driver.get().manage().timeouts().implicitlyWait(3,TimeUnit.MINUTES);
-        Assert.assertEquals(expectedErrorMessage,addFilePage.errorMessage.getText());
-    }*/
 }

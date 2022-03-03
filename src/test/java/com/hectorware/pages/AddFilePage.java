@@ -18,35 +18,32 @@ public class AddFilePage extends BasePage{
         PageFactory.initElements(Driver.get(), this);
     }
 
-
-    @FindBy(xpath = "(//a[@aria-label='Files'])[1]")
-    public WebElement fileButton;
     @FindBy(xpath = "//span[@class='icon icon-add']")
     public WebElement plusSign;
+
     @FindBy(xpath = "//span[@class='displayname']")
     public List<WebElement> addFileOptions;
-    @FindBy(xpath = "//span[contains(text(),'Upload file')]")
-    public WebElement uploadFileButton;
-    @FindBy(xpath = "(//span[contains(text(),'New folder')]")
-    public WebElement addNewFolder;
-    @FindBy(xpath = "//span[contains(text(),'New text document')]")
-    public WebElement addNewDoc;
+
+    @FindBy(css = "span[class='name']")
+    public List<WebElement> loadedFileNames;
+
     @FindBy(css = "#view13-input-folder")
     public WebElement newFolderInput;
-    @FindBy(css = "#body-user>div")
-    public WebElement errorMessage;
-    @FindBy(css = "#view13-input-folder ")
-    public WebElement newFolderInputBox;
+
     @FindBy(css = "input[class='icon-confirm']")
     public WebElement newFolderArrowSign;
+
+    @FindBy(xpath = "//span[contains(text(),'EU7Project')] ")
+    public WebElement getFileText;
+
     @FindBy(css = "#view13-input-file")
     public WebElement newTexDocInputBox;
+
     @FindBy(xpath = "//input[@class='icon-confirm']")
     public WebElement newTexDocArrowSign;
-    @FindBy(css = "div[class='tooltip-inner']")
-    public WebElement folderErrorMessage;
+
     @FindBy(xpath = "//div[contains(text(),'already exists')]")
-    public WebElement textErrorMessage;
+    public WebElement errorMessage;
 
 
 
@@ -61,7 +58,7 @@ public class AddFilePage extends BasePage{
         Robot rb = new Robot();
 
         // copying File path to Clipboard
-        StringSelection str = new StringSelection("C:\\Users\\Pc\\Desktop\\PHONETIC.jpg");
+        StringSelection str = new StringSelection("C:\\Users\\Pc\\Desktop\\EU7Project.jpg");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 
         // press Contol+V for pasting
