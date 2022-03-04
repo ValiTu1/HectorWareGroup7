@@ -1,6 +1,7 @@
 package com.hectorware.pages;
 
 import com.hectorware.utilities.Driver;
+import com.hectorware.utilities.Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,7 +31,8 @@ public class AddFilePage extends BasePage{
     @FindBy(css = "#view13-input-folder")
     public WebElement newFolderInput;
 
-    @FindBy(css = "input[class='icon-confirm']")
+    //@FindBy(css = "input[class='icon-confirm']")
+    @FindBy(xpath = "(//input[@type='submit'])[2]")
     public WebElement newFolderArrowSign;
 
     @FindBy(xpath = "//span[contains(text(),'EU7Project')] ")
@@ -46,14 +48,6 @@ public class AddFilePage extends BasePage{
     public WebElement errorMessage;
 
 
-
-    public static List<String> getElementsText(List<WebElement> list) {
-        List<String> elemTexts = new ArrayList<>();
-        for (WebElement el : list) {
-            elemTexts.add(el.getText());
-        }
-        return elemTexts;
-    }
     public void uploadFile() throws AWTException {
         Robot rb = new Robot();
 
@@ -93,6 +87,7 @@ public class AddFilePage extends BasePage{
     public void addNewFolder() throws InterruptedException {
         Thread.sleep(1);
         newFolderInput.sendKeys("EU7Project");
+        Utils.wait(1);
         newFolderArrowSign.click();
 
     }

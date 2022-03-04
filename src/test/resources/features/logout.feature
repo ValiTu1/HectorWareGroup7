@@ -1,5 +1,5 @@
 Feature:Log-out
-	@wip  @HECW-205
+	  @HECW-205
   Scenario: user can log-out
 		Given Navigate to webpage
 		Then Verify login page is displayed
