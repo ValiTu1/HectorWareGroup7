@@ -1,5 +1,4 @@
-
-@wip
+@HECW-181
 Feature: Add File functionality
   Background:
     Given user is on the login page
@@ -8,9 +7,9 @@ Feature: Add File functionality
     Given user is on the "Files" page
     When user clicks on plus sign button
     Then user should see three options
-        | Upload file       |
-        | New folder        |
-        | New text document |
+  | Upload file       |
+  | New folder        |
+  | New text document |
 
   Scenario: users can upload file
     When user clicks on "Upload file"

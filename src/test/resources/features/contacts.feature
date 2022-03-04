@@ -31,7 +31,7 @@ Feature: contacts functionality
       And user is editing a property "Post office"
       Then new property "Post office" should be displayed
 
-      @wip
+
       Scenario: Users can delete any selected contact
         When user select a contact "Cydeo5"
         And user clicks on the contact dropdown menu
