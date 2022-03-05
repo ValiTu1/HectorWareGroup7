@@ -1,4 +1,3 @@
-@HECW-181
 Feature: Add File functionality
   Background:
     Given user is on the login page
@@ -30,6 +29,7 @@ Feature: Add File functionality
     Then user should give new text document name and click on arrow sign
 
 
+  @wip
   Scenario: user should not create new text document same name
     When user clicks on "New text document"
     Then user should give new text document name
