@@ -3,7 +3,9 @@ package com.hectorware.step_definitions;
 import com.hectorware.pages.AddFilePage;
 import com.hectorware.utilities.Driver;
 import com.hectorware.utilities.Utils;
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,6 +18,7 @@ public class AddFileStepDefs {
         AddFilePage addFilePage=new AddFilePage();
         WebDriverWait wait =new WebDriverWait(Driver.get(),10);
 
+
     @When("user clicks on plus sign button")
     public void userClicksOnPlusSignButton()  {
          wait.until(ExpectedConditions.elementToBeClickable(addFilePage.plusSign));
@@ -25,18 +28,16 @@ public class AddFileStepDefs {
 
     @Then("user should see three options")
     public void userShouldSeeThreeOptions(List<String> expecteAdddFileOptions) {
-        List<String>actualAddFileOptions= Utils.getElementsText(addFilePage.addFileOptions);
+        List<String> actualAddFileOptions= Utils.getElementsText(addFilePage.addFileOptions);
         Assert.assertEquals(expecteAdddFileOptions,actualAddFileOptions);
     }
 
     @When("user clicks on {string}")
     public void userClicksOn(String option)  {
-
         addFilePage.addFileOptions(option);
     }
     @And("user selects a file from directory")
     public void userSelectsAFileFromDirectory() throws AWTException {
-
         addFilePage.uploadFile();
     }
 
@@ -48,7 +49,7 @@ public class AddFileStepDefs {
     }
     @Then("user should give folder name")
     public void userShouldGiveFolderName() {
-         addFilePage.newFolderInput.sendKeys("EU7Project");
+        addFilePage.newFolderInput.sendKeys("EU7Project");
     }
 
     @Then("user should not create new folder same name with existing one and should get error message name {string}")
@@ -65,7 +66,6 @@ public class AddFileStepDefs {
 
     @Then("user should give new text document name and click on arrow sign")
     public void userShouldGiveNewTextDocumentNameAndClickOnArrowSign() {
-         ;
         addFilePage.addNewTextDoc();
     }
 
