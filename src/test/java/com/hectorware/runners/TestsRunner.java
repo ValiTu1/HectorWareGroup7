@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/hectorware/step_definitions",
         dryRun = false,
-        tags = "@wip_esra"
+        tags = "@HECW-245"
 )
 
 public class TestsRunner {
