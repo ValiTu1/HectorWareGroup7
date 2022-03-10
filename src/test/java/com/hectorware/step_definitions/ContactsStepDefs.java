@@ -62,13 +62,15 @@ public class ContactsStepDefs {
 
     @When("user clicks on create new contact button")
     public void userClicksOnCreateNewContactButton() {
-        Utils.waitFor(1);
+        Utils.waitFor(3);
         Utils.waitForVisibility(contactsPage.newContactBtn, 5);
-        contactsPage.newContactBtn.click();
+            contactsPage.newContactBtn.click();
     }
 
     @And("user enters contact details {string}")
-    public void userEntersContactDetails(String companyName) {contactsPage.addContactDetails(companyName, "SDET", "0116254535", "vali@cydeo.com",
+    public void userEntersContactDetails(String companyName) {
+        Utils.waitForVisibility(contactsPage.cityInputBox, 3);
+        contactsPage.addContactDetails(companyName, "SDET", "0116254535", "vali@cydeo.com",
             "1591", "Du cane Road", "132", "W162NW", "London", "London", "Uk");
 
     }

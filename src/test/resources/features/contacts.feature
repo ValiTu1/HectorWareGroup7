@@ -16,9 +16,10 @@ Feature: contacts functionality
 
     Scenario: users cannot create new groups having existing names
       When user clicks on new group button
-      And user enters group name "cydeo"
+      And user enters group name "Univerty"
       And user clicks to create the new group
       Then "This group already exists" should be displayed
+
 
     Scenario: Users can create new contacts and add them to groups
       When user clicks on create new contact button
