@@ -1,4 +1,4 @@
-
+@smoke
 Feature: contacts functionality
 
   Background:
