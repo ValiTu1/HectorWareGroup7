@@ -6,7 +6,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        strict = true,
         plugin = {
                 "json:target/cucumber.json",
                 "html:target/default-html-reports"
@@ -14,7 +13,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/hectorware/step_definitions",
         dryRun = false,
-        tags = "@HECW-245"
+        tags = "@smoke"
 )
 
 public class TestsRunner {
