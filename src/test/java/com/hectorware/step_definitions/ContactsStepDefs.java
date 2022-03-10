@@ -33,7 +33,7 @@ public class ContactsStepDefs {
 
     @When("user clicks on new group button")
     public void userClicksOnNewGroupButton() {
-        Utils.wait(1);
+        Utils.wait(3);
         contactsPage.newGroupBtn.click();
     }
 
