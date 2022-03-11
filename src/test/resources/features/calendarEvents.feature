@@ -4,6 +4,7 @@ Feature: Calendar functionality
     And user enters valid username "Employee1" and password "Employee123"
     And user navigates to "Contacts" page
 
+    @smoke
   Scenario: User should check the daily calendar functionality
     Given user is on the "Calendar" page
     When user clicks on hamburger button

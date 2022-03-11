@@ -28,30 +28,6 @@ public class CalendarStepDefs {
     WebDriver driver;
     CalendarPage logiNPage = new CalendarPage();
 
-
-
-
-    @Given("user navigates to {string} page")
-    public void user_navigates_to_page(String string) {
-
-    }
-
-    @Given("user is on the login page")
-    public void user_is_on_the_login_page() {
-        Driver.get().get(ConfigurationReader.get("url"));
-    }
-
-    @When("user enters valid username {string} and password {string}")
-    public void user_enters_valid_username_and_password(String username, String password) {
-        logiNPage.login(username, password);
-    }
-
-    @Given("user is on the {string} page")
-    public void user_is_on_the_page(String pageTitle) {
-        Utils.wait(5);
-        calendarPage.calendarButton.click();
-    }
-
     @When("user clicks on hamburger button")
     public void userClicksOnHamburgerButton() {
         Utils.wait(5);
