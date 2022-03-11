@@ -1,4 +1,4 @@
-@smoke
+
 Feature: contacts functionality
 
   Background:
@@ -16,10 +16,9 @@ Feature: contacts functionality
 
     Scenario: users cannot create new groups having existing names
       When user clicks on new group button
-      And user enters group name "Univerty"
+      And user enters group name "cydeo"
       And user clicks to create the new group
       Then "This group already exists" should be displayed
-
 
     Scenario: Users can create new contacts and add them to groups
       When user clicks on create new contact button
@@ -29,16 +28,13 @@ Feature: contacts functionality
 
     Scenario: Users can User can edit any selected contact
       When user select a contact "Cydeo5"
-      And user is editing a property "Post office" "012345"
-      Then new property "Post office" value "012345" should be displayed
+      And user is editing a property "Post office"
+      Then new property "Post office" should be displayed
 
-      @wip
-      Scenario: Users can delete any contact
+
+      Scenario: Users can delete any selected contact
         When user select a contact "Cydeo5"
         And user clicks on the contact dropdown menu
         And user clicks on Delete button
-        Then Contact "Cydeo5" is deleted
-
-
-
+        Then Contact "Cydeo5" should be deleted
 
