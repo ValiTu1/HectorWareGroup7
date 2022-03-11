@@ -42,8 +42,8 @@ public class logoutSteps {
 
     @Then("Verify options are displayed")
     public void verify_options_are_displayed() {
-        String expectedSettingTitle = "Mike Smith";
-        String Setting_button = "//span[@title='Mike Smith']";
+        String expectedSettingTitle = "Mike S";
+        String Setting_button = "//span[@title='Mike S']";
         String actualSettingTitle = Driver.get().findElement(By.xpath(Setting_button)).getAttribute("outerText");
 
         Assert.assertEquals("Setting title is not correct", expectedSettingTitle, actualSettingTitle);
