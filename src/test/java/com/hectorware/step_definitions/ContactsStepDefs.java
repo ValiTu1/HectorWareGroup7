@@ -22,7 +22,7 @@ public class ContactsStepDefs {
 
     @Given("user navigates to {string} page")
     public void user_navigates_to_page(String tabName) {
-        wait.until(ExpectedConditions.invisibilityOf(contactsPage.loader));
+        Utils.waitFor(5);
         contactsPage.navigateMenuTab(tabName);
     }
 
