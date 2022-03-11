@@ -10,15 +10,15 @@ Feature: Add File functionality
   | New folder        |
   | New text document |
 
-  Scenario: users can upload file
+  Scenario: user can upload file
     When user clicks on "Upload file"
     And user selects a file from directory
 
   Scenario:user can create new folder
     When user clicks on "New folder"
-    Then user should give new folder name and click on arrow sign
+    Then user should give new folder name and clicks on arrow sign
     And user should able to created a "file"
-
+  @wip
   Scenario: user should not create new folder same name
     When user clicks on "New folder"
     Then user should give folder name
