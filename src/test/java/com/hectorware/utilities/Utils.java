@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -382,6 +384,24 @@ public class Utils {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+    }
+
+    /**
+     * This method gives me local date from computer.
+     * @return gives me formatted date for appropriate format as site
+     * @author BurakA
+     * @since 11.03.2022
+     * @see com.hectorware.step_definitions.CalendarStepDefs
+     */
+    public static String getLocalDate(){
+
+        LocalDateTime myDateObj = LocalDateTime.now();
+
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd MMM yyyy");
+
+        return myDateObj.format(myFormatObj);
+
     }
 
 
