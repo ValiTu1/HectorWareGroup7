@@ -39,3 +39,6 @@ Feature: contacts functionality
         And user clicks on Delete button
         Then Contact "Cydeo5" is deleted
 
+
+
+

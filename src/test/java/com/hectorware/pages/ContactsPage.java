@@ -16,6 +16,8 @@ public class ContactsPage extends BasePage{
 
     WebDriverWait wait = new WebDriverWait(Driver.get(), 5);
 
+    //locators for Contacts Page
+
     @FindBy(xpath = "//span[contains(text(),'New group')]")
     public WebElement newGroupBtn;
 
