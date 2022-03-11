@@ -1,4 +1,4 @@
-@smoke
+
 Feature: contacts functionality
 
   Background:
@@ -7,7 +7,7 @@ Feature: contacts functionality
     And user navigates to "Contacts" page
     And user is on the "Contacts" page
 
-
+  @smoke
   Scenario: users can create new groups
     When user clicks on new group button
     And user enters group name "cydeo3"
