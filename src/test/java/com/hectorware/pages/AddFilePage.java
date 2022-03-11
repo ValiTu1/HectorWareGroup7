@@ -34,7 +34,7 @@ public class AddFilePage extends BasePage{
     public WebElement addNewDoc;
     @FindBy(css = "#view13-input-folder")
     public WebElement newFolderInput;
-    @FindBy(css = "#body-user>div")
+    @FindBy(css = "div[class='tooltip-inner']")
     public WebElement errorMessage;
     @FindBy(css = "#view13-input-folder ")
     public WebElement newFolderInputBox;

@@ -58,8 +58,8 @@ public class AddFileStepDefs {
 
     }
 
-    @Then("user should give new folder name and click on arrow sign")
-    public void userShouldGiveNewFolderNameAndClickOnArrowSign() throws InterruptedException {
+    @Then("user should give new folder name and clicks on arrow sign")
+    public void userShouldGiveNewFolderNameAndClicksOnArrowSign() throws InterruptedException {
 
         addFilePage.addNewFolder();
     }
