@@ -56,7 +56,7 @@ public class AddFilePage extends BasePage{
         Robot rb = new Robot();
 
         // copying File path to Clipboard
-        StringSelection str = new StringSelection("C:\\Users\\Pc\\Desktop\\PHONETIC.jpg");
+        StringSelection str = new StringSelection("C:\\Users\\Pc\\Desktop\\EU7Project.jpg");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
 
         // press Contol+V for pasting
