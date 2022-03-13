@@ -33,56 +33,47 @@ public class OnlineStatusStepDefs {
 
     @When("the user clicks the status bar")
     public void the_user_clicks_the_status_bar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Then("the user should be able view Online Status")
     public void the_user_should_be_able_view_Online_Status() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @When("the user sees four different status options")
     public void the_user_sees_four_different_status_options() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @When("the user clicks the “Away” status option")
     public void the_user_clicks_the_Away_status_option() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Then("the user should be able change Online Status")
     public void the_user_should_be_able_change_Online_Status() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @When("the user is on the status setting page")
     public void the_user_is_on_the_status_setting_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @When("the user sees five different status message options")
     public void the_user_sees_five_different_status_message_options() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @When("the user clicks the “in a meeting” status message options")
     public void the_user_clicks_the_in_a_meeting_status_message_options() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Then("the user should be able to set Status massage")
     public void the_user_should_be_able_to_set_Status_massage() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
 }
