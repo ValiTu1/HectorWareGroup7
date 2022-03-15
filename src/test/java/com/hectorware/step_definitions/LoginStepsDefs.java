@@ -10,6 +10,8 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 
+
+
 public class LoginStepsDefs {
 
     LoginPage loginPage = new LoginPage();
@@ -21,6 +23,7 @@ public class LoginStepsDefs {
 
     @When("user enters valid username {string} and password {string}")
     public void user_enters_valid_username_and_password(String username, String password) {
+        Utils.waitFor(3);
         loginPage.login(username, password);
     }
 

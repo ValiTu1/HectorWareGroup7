@@ -26,12 +26,12 @@ import static org.junit.Assert.assertEquals;
 public class CalendarStepDefs {
     CalendarPage calendarPage = new CalendarPage();
 
+
     @And("user navigates to Calendar page")
     public void userNavigatesToCalendarPage() {
       //  Utils.wait(5);
       //  calendarPage.calendarButton.click();
     }
-
 
     @When("user clicks on hamburger button")
     public void userClicksOnHamburgerButton() {

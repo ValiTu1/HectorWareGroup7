@@ -15,6 +15,7 @@ Feature: Add File functionality
     When user clicks on "Upload file"
     And user selects a file from directory
 
+  @smoke
   Scenario:user can create new folder
     When user clicks on "New folder"
     Then user should give new folder name and click on arrow sign
