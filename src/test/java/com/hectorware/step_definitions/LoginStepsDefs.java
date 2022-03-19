@@ -18,7 +18,6 @@ public class LoginStepsDefs {
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
-        Utils.waitFor(2);
         Driver.get().get(ConfigurationReader.get("url"));
     }
 
