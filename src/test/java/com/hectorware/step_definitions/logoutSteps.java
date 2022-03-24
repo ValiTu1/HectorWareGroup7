@@ -57,7 +57,7 @@ public class logoutSteps {
 
     @Then("Verify that user logged out and lands on login page")
     public void verify_that_user_logged_out_and_lands_on_login_page() {
-        Utils.wait(5);
+        Utils.wait(6);
         String exptectedTitle = "Hectorware - QA";
         String actualtitle = Driver.get().getTitle();
         Assert.assertEquals("User is not on the index page", exptectedTitle, actualtitle);
