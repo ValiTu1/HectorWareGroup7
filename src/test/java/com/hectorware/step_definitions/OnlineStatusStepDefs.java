@@ -2,8 +2,7 @@ package com.hectorware.step_definitions;
 import com.hectorware.pages.OnlineStatusPage;
 import com.hectorware.utilities.Utils;
 import io.cucumber.java.en.*;
-import org.junit.Assert;
-
+import static org.junit.Assert.*;
 import java.util.List;
 
 public class OnlineStatusStepDefs {
@@ -11,70 +10,51 @@ public class OnlineStatusStepDefs {
     OnlineStatusPage onlineStatusPage=new OnlineStatusPage();
     @When("the user clicks the profile icon")
     public void the_user_clicks_the_profile_icon() {
-        onlineStatusPage.OnlineStatus.click();
+        onlineStatusPage.statusBtn.click();
 
     }
 
     @When("the user sees profile drop down icons")
     public void the_user_sees_profile_drop_down_icons() {
-        onlineStatusPage.InAmeetingButton.click();
-    }
-
-    @And("the user should see {string}")
-    public void theUserShouldSee(List <String>ExpectedOptions)
-    {
-        List<String>actualOption= Utils.getElementsText(onlineStatusPage.statusOptions);
-        System.out.println("actualOption = " + actualOption);
-        System.out.println("ExpectedOptions = " + ExpectedOptions);
-
-
-        Assert.assertTrue(ExpectedOptions.contains(actualOption));
+        onlineStatusPage.currentStatus.click();
     }
 
     @When("the user clicks the status bar")
     public void the_user_clicks_the_status_bar() {
-
+        onlineStatusPage.setStatusBtn.click();
     }
 
-    @Then("the user should be able view Online Status")
-    public void the_user_should_be_able_view_Online_Status() {
-
-    }
-
-    @When("the user sees four different status options")
-    public void the_user_sees_four_different_status_options() {
-
-    }
-
-    @When("the user clicks the “Away” status option")
-    public void the_user_clicks_the_Away_status_option() {
-
-    }
-
-    @Then("the user should be able change Online Status")
-    public void the_user_should_be_able_change_Online_Status() {
-
-    }
-
-    @When("the user is on the status setting page")
-    public void the_user_is_on_the_status_setting_page() {
-
-    }
-
-    @When("the user sees five different status message options")
-    public void the_user_sees_five_different_status_message_options() {
-
-    }
-
-    @When("the user clicks the “in a meeting” status message options")
-    public void the_user_clicks_the_in_a_meeting_status_message_options() {
-
-    }
 
     @Then("the user should be able to set Status massage")
     public void the_user_should_be_able_to_set_Status_massage() {
+            onlineStatusPage.clickSetStatusMessage();
 
     }
 
+    @Then("the user should see the following options")
+    public void theUserShouldSeeTheFollowingOptions(List<String> expectedStatusOptions) {
+        assertEquals(expectedStatusOptions, onlineStatusPage.getStatusOptions());
+    }
+
+    @And("the user clicks the {string} status option")
+    public void theUserClicksTheStatusOption(String statusOption) {
+        onlineStatusPage.selectStatusByName("Away");
+    }
+
+    @Then("the status should be changed to {string}")
+    public void theStatusShouldBeChangedTo(String status) {
+        assertEquals(onlineStatusPage.currentStatus.getAttribute("outerText").trim(), status);
+    }
+
+    @And("the user sees the following status message options")
+    public void theUserSeesTheFollowingStatusMessageOptions(List<String> expectedOptions) {
+        assertEquals(expectedOptions, onlineStatusPage.getStatusMessages());
+    }
+
+    @When("the user clicks the {string} status message options")
+    public void theUserClicksTheStatusMessageOptions(String statusMessage) {
+        Utils.waitFor(1);
+        onlineStatusPage.selectStatusMessageByName(statusMessage);
+    }
 }
 
