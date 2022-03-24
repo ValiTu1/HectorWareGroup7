@@ -1,6 +1,6 @@
 Feature:Log-out
-	@wip  @HECW-205 @smoke
-  Scenario: user can log-out
+	@HECW-205 @smoke
+  	Scenario: user can log-out
 		Given Navigate to webpage
 		Then Verify login page is displayed
 		When user enters valid username "Employee1" and password "Employee123"

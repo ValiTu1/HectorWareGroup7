@@ -23,7 +23,7 @@ public class LoginStepsDefs {
 
     @When("user enters valid username {string} and password {string}")
     public void user_enters_valid_username_and_password(String username, String password) {
-        Utils.waitFor(3);
+        Utils.waitFor(1);
         loginPage.login(username, password);
     }
 
