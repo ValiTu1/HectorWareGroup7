@@ -5,6 +5,7 @@ Feature:
     And user enters valid username "Employee1" and password "Employee123"
     When the user clicks the profile icon
 
+  @wip
   Scenario:view Online Status
     And the user sees profile drop down icons
     When the user clicks the status bar
